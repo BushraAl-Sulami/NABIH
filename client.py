@@ -71,11 +71,8 @@ def client_program():
             print("Closing connection.")
             client_socket.close()
             sys.exit()
-        #يرسل الكلمة المراد تصحيحها الى السيرفر            
         client_socket.send(message.encode("utf-8"))
-        # يستقبل التصحيح من السيرفر
         correction = client_socket.recv(1024).decode("utf-8")
-        # يتم طباعة الرسالة المستقبلة
         print_colored_message(str(correction), Fore.LIGHTMAGENTA_EX)
 
 
